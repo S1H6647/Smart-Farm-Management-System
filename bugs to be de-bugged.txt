@@ -1,2 +1,2 @@
 1. After deletion of 'N' crop detail, if we view the details it shows 'N' number of index error. We only need to show one index error. 
-2. Not being able to load files.
+2. The program is static.

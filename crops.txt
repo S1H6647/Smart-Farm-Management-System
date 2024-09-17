@@ -1,15 +1,1 @@
-2
-Crop Name: Rice
-Area (in acres): 1.00
-Expected Yield (in tons): 2.00
-Planting Date: 2009-10-10
-Harvesting Date: 2010-10-10
-Status: Planting
-
-Crop Name: Carrots
-Area (in acres): 2.00
-Expected Yield (in tons): 4.00
-Planting Date: 2015-10-10
-Harvesting Date: 2016-10-10
-Status: Harvested
-
+0

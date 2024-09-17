@@ -17,7 +17,7 @@
  * ! Structure defining:
  */
 
-struct Crop
+struct Crops
 {
     char cropName[100];
     float area; // Planted in acres
@@ -41,7 +41,6 @@ struct Expenses
     char description[256];
     float amount;
 } Expenses[MAX_EXPENSES];
-
 
 /**
  * ! Necessary Functions:
@@ -86,11 +85,7 @@ float total = 0,average = 0;
 int main()
 {
     // Heading - Introduction about the project:
-    printf(COLOR_CYAN "Smart Farm Management System \n");
-    printf(COLOR_RESET"This management system will assist farmers in managing their farms efficiently.\n");
-    printf("This system should cover multiple aspects of farm management, \n");
-    printf("including crop tracking, irrigation scheduling, and expense tracking. \n");
-    printf("\n\n");
+    printf(COLOR_CYAN "~~~ Smart Farm Management System ~~~\n"COLOR_RESET);
     loadFromFile();
     menu();
     printf(COLOR_RESET"");
@@ -217,13 +212,12 @@ void menu()
     do
     {
         printf("\n");
-        printf(COLOR_CYAN"Main Menu: \nEnter the number to choose the option: \n");
-        printf(COLOR_RESET"");
+        printf(COLOR_CYAN"Main Menu: \nEnter the number to choose the option: \n"COLOR_RESET);
         printf("1. Manage Crops\n");
         printf("2. Irrigation Scheduling\n");
         printf("3. Expense Tracking\n");
         printf("4. Save and Exit\n");
-        printf("Enter the number to choose the option: \n");
+        printf("Enter the number to choose the option: ");
         scanf("%d",&choice);
         printf("\n");
 
@@ -234,6 +228,7 @@ void menu()
                 break;
 
             case 2:
+                printf(COLOR_CYAN"~~~ Irrigation Scheduling Management ~~~\n"COLOR_RESET);
                 irrigationScheduling();
                 break;
 
@@ -258,13 +253,13 @@ void menu()
 void manageCrops()
 {
     int choice;
-    printf(COLOR_CYAN"Crop Management Section: \n"COLOR_RESET);
+    printf(COLOR_CYAN"~~~ Crop Management Section ~~~ \n"COLOR_RESET);
     printf("1. Add Crops Details\n");
     printf("2. View All Crops\n");
     printf("3. Update Crop Status\n");
     printf("4. Delete Crops\n");
     printf("5. Exit to Main Menu\n");
-    printf(COLOR_GREEN"Enter the number to choose the option: "COLOR_RESET); 
+    printf("Enter the number to choose the option: "); 
     printf("\n");
     scanf("%d",&choice);
 
@@ -458,7 +453,6 @@ void updateCrop(int updateindex)
         printf(COLOR_GREEN"Your data has been updated!\n"COLOR_RED);
         viewCrop(updateindex);
         break;
-        
     default:
         printf("Wrong Input!\n");
         updateCrop(updateindex);
@@ -521,7 +515,7 @@ void irrigationScheduling()
         menu();
     }
 
-    printf(COLOR_GREEN"Enter the number of Fields: \n"COLOR_RESET);
+    printf("Enter the number of Fields: \n");
     scanf("%d", &numFields);
 
     for (i = 0; i < numFields; i++)
@@ -607,7 +601,7 @@ float waterRequriementCalc(int fieldToCalc)
 void expenseTracking()
 {
     int ask;
-    printf(COLOR_CYAN"Expense Tracking Section: \n"COLOR_RESET);
+    printf(COLOR_CYAN"~~~ Expense Tracking Section ~~~ \n"COLOR_RESET);
     printf(COLOR_GREEN"Do you want to Continue or Exit to Main Menu: \n"COLOR_RESET);
     printf("Enter 1 to Continue and 2 to Exit: ");
     scanf("%d",&ask);
